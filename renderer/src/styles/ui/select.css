@@ -1,0 +1,101 @@
+.bd-select-wrapper {
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.bd-select-wrapper + .bd-select-wrapper {
+    margin-left: 10px;
+}
+
+.bd-select {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    color: var(--text-normal);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-tertiary);
+    border-radius: 3px;
+    padding: 5px 5px 5px 0;
+    transition: 150ms ease border-color;
+}
+
+.bd-select:focus-visible {
+    box-shadow: 0 0 0 4px var(--focus-primary);
+}
+
+.bd-select.bd-select-transparent {
+    width: auto;
+    align-items: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: -3px;
+}
+
+.bd-select-label {
+    padding-left: 8px;
+}
+
+.bd-select-placeholder {
+    color: var(--text-muted);
+}
+
+.bd-select-arrow {
+    margin-left: 5px;
+}
+
+.bd-select.menu-open .bd-select-arrow {
+    transform: rotate(180deg);
+}
+
+.bd-select-options {
+    position: absolute;
+    border-radius: 0 0 3px 3px;
+    max-height: 300px;
+    min-width: calc(100% + 2px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    list-style-type: none;
+    border: 1px solid var(--background-tertiary);
+    background: var(--background-secondary);
+    box-shadow: var(--elevation-medium);
+    margin-top: -1px;
+    margin-left: -1px;
+    z-index: 3;
+    top: 100%;
+}
+
+.bd-select-transparent .bd-select-options {
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+.bd-select-option {
+    padding: 6px 12px;
+    text-align: left;
+    cursor: pointer;
+    white-space: pre;
+    color: var(--interactive-normal);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.bd-select-option:hover {
+    background-color: var(--background-secondary-alt);
+    color: var(--interactive-hover);
+}
+
+.bd-select-option.selected {
+    background-color: var(--background-tertiary);
+    color: var(--interactive-active);
+} 

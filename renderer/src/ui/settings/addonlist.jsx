@@ -5,7 +5,7 @@ import Modals from "../modals";
 import SettingsTitle from "./title";
 import ReloadIcon from "../icons/reload";
 import AddonCard from "./addoncard";
-import Dropdown from "./components/dropdown";
+import Select from "./components/select";
 import Search from "./components/search";
 import ErrorBoundary from "../errorboundary";
 
@@ -163,11 +163,11 @@ export default class AddonList extends React.Component {
                     <div className="bd-addon-dropdowns">
                         <div className="bd-select-wrapper">
                             <label className="bd-label">{Strings.Sorting.sortBy}:</label>
-                            <Dropdown options={this.sortOptions} value={this.state.sort} onChange={this.sort} style="transparent" />
+                            <Select options={this.sortOptions} value={this.state.sort} onChange={this.sort} style="transparent" />
                         </div>
                         <div className="bd-select-wrapper">
                             <label className="bd-label">{Strings.Sorting.order}:</label>
-                            <Dropdown options={this.directions} value={this.state.ascending} onChange={this.reverse} style="transparent" />
+                            <Select options={this.directions} value={this.state.ascending} onChange={this.reverse} style="transparent" />
                         </div>
                     </div>
                     <div className="bd-addon-views">
