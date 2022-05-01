@@ -27,8 +27,41 @@ export default class Utilities {
         return node.childNodes.length > 1 ? node.childNodes : node.childNodes[0];
     }
 
+    /**
+     * Accepts a string containing any valid CSS color and parses it to an [r, g, b, a] array.
+     * @param {string} str - String containing the color to be parsed
+     * @returns {number[]} - Array containing the color values in the order [r, g, b, a]
+     */
+    static parseColor(str) {
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(`target {color: ${str}}`);
+        return sheet.cssRules[0].style.color.match(/[\.\d]+/g).map(Number);
+    }
+
+    /**
+     * Restricts a given number to a set of bounds.
+     * @param {number} value - The number to clamp
+     * @param {number} min - The minimum bound
+     * @param {number} max - The maximum bound
+     * @returns {number} - The clamped number
+     */
+    static clamp(value, min, max) {
+        return value > max ? max : value < min ? min : value;
+    }
+
     static getTextArea() {
         return DOM.query(".channelTextArea-1LDbYG textarea");
+    }
+
+    /**
+     * Rounds a number to the nearest given digit.
+     * @param {number} number - The number to round
+     * @param {number} digits - The number of digits to round to
+     * @param {number} base - The base to round in
+     * @returns {number} - The rounded number
+     */
+    static round(number, digits = 0, base = Math.pow(10, digits)) {
+        return Math.round(base * number) / base;
     }
 
     static insertText(textarea, text) {
