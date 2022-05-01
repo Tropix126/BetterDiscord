@@ -223,11 +223,3 @@
     font-size: 14px;
     color: var(--interactive-normal);
 }
-
-.checkbox-item {
-    display: flex;
-}
-
-.checkbox-item .checkbox-label {
-    margin-right: 8px;
-}

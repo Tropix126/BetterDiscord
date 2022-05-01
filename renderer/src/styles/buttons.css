@@ -17,6 +17,10 @@
     background-color: #3268B7;
 }
 
+.bd-button:focus-visible {
+    box-shadow: 0 0 0 4px var(--focus-primary);
+}
+
 .bd-button.bd-button-success {
     background-color: #43B581;
 }
