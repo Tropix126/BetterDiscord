@@ -1,6 +1,6 @@
 import {React, WebpackModules, DiscordModules, Settings} from "modules";
 
-import Checkbox from "./checkbox";
+import Checkbox from "../common/checkbox";
 
 const Tooltip = WebpackModules.getByDisplayName("Tooltip");
 
@@ -83,7 +83,9 @@ export default class CodeEditor extends React.Component {
     }
 
     makeCheckbox(checkbox) {
-        return <Checkbox text={checkbox.label} onChange={checkbox.onChange} checked={checkbox.checked} />;
+        return <Checkbox reverse size={16} onChange={checkbox.onChange} checked={checkbox.checked}>
+            {checkbox.label}
+        </Checkbox>;
     }
 
     makeButton(button) {
